@@ -7,9 +7,10 @@ RUN yum -y install glibc.i686 libstdc++.i686 && yum clean all && rm -rf /var/cac
 if [ ! -f /Steam/steamcmd.sh ]; then\n\
     curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf - -C /Steam\n\
     /Steam/steamcmd.sh +exit\n\
-    echo "Finished install" \n\
+    echo "Finished install" && bash\n\
 fi' >> /Steam/firstTimeInstall.sh &&\
     chmod +x firstTimeInstall.sh
-CMD /Steam/firstTimeInstall.sh    
+CMD /Steam/firstTimeInstall.sh
 # VOLUME /DedServers # Not needed better practice is use Named Volumes.
 # From here you can go into the container shell and start downloading and configure the servers.
+# You can edit firstTimeInstall and handle the else to Auto Up your server when container is restarted.
