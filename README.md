@@ -26,5 +26,7 @@ When new version of CentOS you can upgrade deleting the container without the vo
 
 Tips:
 When the container is alredy running the server to check how it goes you can `docker attach IDCONTAINER`
+
 When the container is alredy running the server to open new bash and edit files you can `docker exec -it IDCONTAINER bash`
+
 For you being able to restart the server just by restarting the container add eddit firstTimeInstall.sh add an else and point it to a bash script on /DedServ that will execute your game service.
