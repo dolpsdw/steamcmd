@@ -16,12 +16,15 @@ docker volume create steamDedServ
 
 Now we can use that volume and inject it in our container (or others if you want to test other steamcmd solutions)
 ```
-docker run -it -v steamDedServ:/DedServ dolpsdw/steamcmd [ OPTIONAL -e USER='steamuser' -e PASS='steampasswd']
+docker run -it -v steamDedServ:/DedServ dolpsdw/steamcmd
 ```
 
 When new version of CentOS you can upgrade deleting the container without the volume, and re runing it.
 
 *Ensure that you install your the Dedicated servers in /DedServ folder or they will not persist in the volume.
-```
-force_install_dir /DedServ/csgo
-```
+`force_install_dir /DedServ/csgo`
+
+Tips:
+When the container is alredy running the server to check how it goes you can `docker attach IDCONTAINER`
+When the container is alredy running the server to open new bash and edit files you can `docker exec -it IDCONTAINER bash`
+For you being able to restart the server just by restarting the container add eddit firstTimeInstall.sh add an else and point it to a bash script on /DedServ that will execute your game service.
