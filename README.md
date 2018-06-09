@@ -20,3 +20,8 @@ docker run -it -v steamDedServ:/DedServ dolpsdw/steamcmd
 ```
 
 When new version of CentOS you can upgrade deleting the container without the volume, and re runing it.
+
+*Ensure that you install your the Dedicated servers in /DedServ folder or they will not persist in the volume.
+```
+force_install_dir /DedServ/csgo
+```
