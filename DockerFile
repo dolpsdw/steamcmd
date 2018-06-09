@@ -6,7 +6,7 @@ RUN yum -y install glibc.i686 libstdc++.i686 && yum clean all && rm -rf /var/cac
     echo $'#!/usr/bin/env bash\n\
 if [ ! -f /Steam/steamcmd.sh ]; then\n\
     curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf - \n\
-    /Steam/steamcmd.sh +exit\n\
+    ./steamcmd.sh +exit\n\
     echo "Finished install" \n\
 fi' >> /Steam/firstTimeInstall.sh &&\
     chmod +x firstTimeInstall.sh
