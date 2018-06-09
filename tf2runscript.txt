@@ -1,0 +1,10 @@
+// Example of runscript for install and update games
+// execute like /Steam/steamcmd.sh +runscript myrunscript.txt
+@ShutdownOnFailedCommand 1 //set to 0 if updating multiple servers at once
+@NoPromptForPassword 1
+login USERNAME PASSWORD
+//for servers which don't need a login
+//login anonymous 
+force_install_dir /DedServ/tf2
+app_update 232250 validate
+quit
