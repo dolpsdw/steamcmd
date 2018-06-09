@@ -9,6 +9,6 @@ if [ ! -f /Steam/steamcmd.sh ]; then \
 fi\
     " >> /Steam/firstTimeInstall.sh &&\
     chmod +x firstTimeInstall.sh
-ENTRYPOINT /Steam/firstTimeInstall.sh    
+CMD /Steam/firstTimeInstall.sh    
 # VOLUME /DedServers # Not needed better practice is use Named Volumes.
 # From here you can go into the container shell and start downloading and configure the servers.
