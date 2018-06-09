@@ -8,5 +8,5 @@ RUN yum -y install glibc.i686 libstdc++.i686 && yum clean all && rm -rf /var/cac
     mkdir /Steam && cd /Steam &&\
     curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf - &&\
     ./steamcmd.sh +login $USERNAME $PASSWORD +quit
-VOLUME /DedServers
+# VOLUME /DedServers # Not needed better practice is use Named Volumes.
 # From here you can go into the container shell and start downloading and configure the servers.
