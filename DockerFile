@@ -1,0 +1,12 @@
+FROM centos:latest
+# DockerFile Centos Steamcmd
+# In case you want to log in into steamcmd with credentials ensure no double factor or go in to the container shell and run the login there.
+ENV USER="anonymous"
+ENV PASS=""
+
+RUN yum -y install glibc.i686 libstdc++.i686 && yum clean all && rm -rf /var/cache/yum &&\
+    mkdir /Steam && cd /Steam &&\
+    curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf - &&\
+    ./steamcmd.sh +login $USERNAME $PASSWORD +quit
+VOLUME /DedServers
+# From here you can go into the container shell and start downloading and configure the servers.
