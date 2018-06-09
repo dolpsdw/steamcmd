@@ -16,7 +16,7 @@ docker volume create steamDedServ
 
 Now we can use that volume and inject it in our container (or others if you want to test other steamcmd solutions)
 ```
-docker run -it -v steamDedServ:/DedServ dolpsdw/steamcmd -e USER='steamuser' PASS='steampasswd'
+docker run -it -v steamDedServ:/DedServ dolpsdw/steamcmd [ OPTIONAL -e USER='steamuser' -e PASS='steampasswd']
 ```
 
 When new version of CentOS you can upgrade deleting the container without the volume, and re runing it.
