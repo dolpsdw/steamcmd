@@ -1,7 +1,7 @@
-FROM centos:latest
-# DockerFile Centos Steamcmd
+FROM centos:6
+# DockerFile Centos Steamcmd centos 6 better compatibility at least on tf2
 
-RUN yum -y install glibc.i686 libstdc++.i686 && yum clean all && rm -rf /var/cache/yum &&\
+RUN yum -y install glibc.i686 libstdc++.i686 ncompress libgcc.x86_64 libgcc.i686 glibc.i686 zlib.i686 ncurses-libs.i686 && yum clean all && rm -rf /var/cache/yum &&\
     mkdir /Steam && cd /Steam &&\
     echo $'#!/usr/bin/env bash\n\
 if [ ! -f /Steam/steamcmd.sh ]; then\n\
