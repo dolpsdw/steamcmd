@@ -1,5 +1,13 @@
 # steamcmd
 DockerFile for steamcmd based on CentOS where glibc runs smoothly.
+For getting the necesary dependencys of your concrete games use readelf on all executables ej:
+```
+readelf -d ./steamcmd | grep NEEDED
+```
+then use yum provides to locate the yum packages that you need.
+```
+yum provides '*/librt.so.1'
+```
 
 ## Purpose
 This DockerFile will build an image with the latest CentOS && the librarys needed for steamcmd.
