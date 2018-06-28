@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -y install libz1 libncurses5 libbz2-1.0 libgcc1 li
     echo $'#!/usr/bin/env bash\n\
 if [ ! -f /Steam/steamcmd.sh ]; then\n\
     curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf - -C /Steam\n\
-    /Steam/steamcmd.sh +exit\n\
+    /Steam/steamcmd.sh +quit\n\
     echo "Finished install" && bash\n\
 fi' >> /Steam/firstTimeInstall.sh &&\
     chmod +x firstTimeInstall.sh
