@@ -1,4 +1,4 @@
-FROM i386/ubuntu:xenial
+FROM i386/debian:buster-slim
 # DockerFile Ubuntu 32 Steamcmd better compatibility at least on tf2
 
 RUN apt-get update && apt-get -y install libz1 libncurses5 libbz2-1.0 libgcc1 libstdc++6 libtinfo5 libncurses5 libcurl3-gnutls &&\
